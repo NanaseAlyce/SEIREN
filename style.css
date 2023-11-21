@@ -17,11 +17,9 @@ body, html {
     top: 25px;
     left: 50px;
     right: 50px;
-    width: 100%;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    flex-wrap: nowrap;
 }
 
 .navbar-left{
@@ -29,9 +27,12 @@ body, html {
     flex-wrap: nowrap;
     align-items: center;
     flex:1;
+    width: 33%;
 }
 
 .navbar-right{
+    display: flex;
+    justify-content: flex-end;
     flex:1;
 }
 
@@ -116,9 +117,10 @@ body, html {
 }
 
 .nav-button{
+    cursor: pointer;
     flex: 1;
     background-color: transparent;
-    margin: 0 10px;
+    margin: 0 30px;
     padding:10px 15px;
     font-size: 25px;
     border: none;
@@ -157,6 +159,7 @@ body, html {
     font-size:22px;
     color: black;
     font-weight: bolder;
+    transition:background-color 0.3s ease-in-out;
 }
 
 .dropdown:hover .dropdown-content{
@@ -164,4 +167,9 @@ body, html {
     opacity: 1;
     transform: translateY(0);
     transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.dropdown-content a:hover{
+    background-color: gray;
+    transition:background-color 0.3s ease-in-out;
 }
