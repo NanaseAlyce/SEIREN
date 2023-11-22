@@ -31,6 +31,7 @@ body, html {
 }
 
 .navbar-right{
+    margin-right: 100px;
     display: flex;
     justify-content: flex-end;
     flex:1;
@@ -120,11 +121,11 @@ body, html {
     cursor: pointer;
     flex: 1;
     background-color: transparent;
-    margin: 0 30px;
+    margin-right: 45px;
     padding:10px 15px;
     font-size: 25px;
     border: none;
-    color: lightgray;
+    color: whitesmoke;
     font-weight: bold;
     transition: color 0.3s ease-in-out;
 }
@@ -141,7 +142,7 @@ body, html {
 
 .dropdown-content{
     align-content: center;
-    display: block;
+    visibility: hidden;
     position: absolute;
     text-align: left;
     min-width: calc(100% + 75px);
@@ -151,6 +152,7 @@ body, html {
     box-shadow: 2px 6px 12px 0;
     z-index: 1;
     border-radius: 15px;
+    background-color: #e8dede;
 }
 
 .dropdown-content a{
@@ -160,6 +162,12 @@ body, html {
     color: black;
     font-weight: bolder;
     transition:background-color 0.3s ease-in-out;
+    text-decoration: none;
+}
+
+.dropdown-content img{
+    height:25px;
+    vertical-align: -5px;
 }
 
 .dropdown:hover .dropdown-content{
@@ -167,9 +175,63 @@ body, html {
     opacity: 1;
     transform: translateY(0);
     transition: opacity 0.3s ease, transform 0.3s ease;
+    visibility: visible;
+    transition-delay: 0s;
 }
 
 .dropdown-content a:hover{
     background-color: gray;
     transition:background-color 0.3s ease-in-out;
+}
+
+.nav-button-right{
+    background-color: rgba(246, 246, 246, 0.3);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 40px;
+    width: 40px;
+    border-radius: 10px;
+    font-size:25px;
+    text-decoration: none;
+    margin: 0 10px;
+    transition: background-color 0.3s;
+}
+
+.nav-button-right:hover{
+    background-color: rgba(246, 246, 246, 0.7);
+    transition: background-color 0.3s;
+}
+
+.nav-button-right i{
+    background-color: rgba(0, 0, 0, 0);
+    color: black;
+}
+
+.navbar-nfts
+{
+    position: absolute;
+    top: 150px;
+    left: 50px;
+    right: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.navbar-nfts-button{
+    margin-right: 20px;
+    cursor: pointer;
+    background-color: transparent;
+    padding:10px 15px;
+    font-size: 20px;
+    border: none;
+    color: whitesmoke;
+    font-weight: bold;
+    transition: color 0.3s ease-in-out;
+}
+
+.navbar-nfts-button:hover{
+    background-color: rgb(204, 196, 196);
+    border-radius: 18px;
 }
