@@ -4,13 +4,21 @@ document.addEventListener('DOMContentLoaded', function() {
     if (searchBox) {
         searchBox.addEventListener('focus', function() {
             this.placeholder = 'Search';
+            this.classList.add('expanded');
             var slash = document.getElementById('slash');
             slash.textContent = 'esc';
+            var clearButton = document.getElementById('clearButton');
+            clearButton.classList.add('show');
         });
 
         searchBox.addEventListener('blur', function() {
             this.placeholder = '';
             var slash = document.getElementById('slash');
+            var clearButton = document.getElementById('clearButton');
+            if (this.value.length == 0) {
+                clearButton.classList.remove('show');
+                this.classList.remove('expanded');
+            }
             slash.textContent = '/';
         });
 

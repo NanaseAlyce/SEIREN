@@ -31,7 +31,7 @@ body, html {
 }
 
 .navbar-right{
-    margin-right: 100px;
+    margin-right: 0px;
     display: flex;
     justify-content: flex-end;
     flex:1;
@@ -54,7 +54,7 @@ body, html {
 
 #searchBox {
     margin-left: 5px;
-    width: 50px;
+    width: 100px;
     height: 20px;
     border: 1px solid #ccc;
     padding: 5px;
@@ -83,15 +83,16 @@ body, html {
 .slash {
     background-color: transparent;
     height: 20px;
-    margin-left: 10px;
+    margin-left: -10px;
+    margin-right: 10px;
     color: white;
 }
 
 #clearButton {
     pointer-events: none;
-    position: absolute;
-    right: 40px;
-    top: 50%;
+    position: relative;
+    right: 25px;
+    top: 8px;
     transform: translateY(-50%);
     background: transparent;
     border: none;
@@ -100,12 +101,22 @@ body, html {
     transition: opacity 0.3s ease-in-out;
 }
 
-.search-container:focus-within #searchBox {
-    width: 150px;
+/*.search-container:focus-within #searchBox {
+    width: 300px;
+    background-color: white;
+}*/
+
+#searchBox.expanded{
+    width: 300px;
     background-color: white;
 }
 
-.search-container:focus-within #clearButton {
+/*.search-container:focus-within #clearButton {
+    opacity: 1;
+    pointer-events: auto;
+}*/
+
+#clearButton.show{
     opacity: 1;
     pointer-events: auto;
 }
@@ -235,3 +246,115 @@ body, html {
     background-color: rgb(204, 196, 196);
     border-radius: 18px;
 }
+
+.top-nfts-container{
+    display: flex;
+    position: absolute;
+    width: 100%;
+    height:385px;
+    top:225px;
+    align-items: center;
+    justify-content: space-between;
+    overflow: hidden;
+}
+
+.top-nfts-arrow-container-left{
+    z-index: 100;
+    margin-left: 10px;
+}
+
+.top-nfts-arrow-container-right{
+    margin-right: 10px;
+}
+
+.top-nfts-arrow-container-left,.top-nfts-arrow-container-right{
+    display: flex;
+    align-items: center;
+    background-color: transparent;
+    overflow: hidden;
+    height: 100%;
+    width: 30px;
+    border-radius: 10px;
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity 0.3s ease,visibility 0s linear 0.3s;
+}
+
+.top-nfts-container:hover .top-nfts-arrow-container-left,.top-nfts-container:hover .top-nfts-arrow-container-right{
+    visibility: visible;
+    opacity: 1;
+    transition: opacity 0.3s ease;
+}
+
+.top-nfts-arrow-container-left button,.top-nfts-arrow-container-right button{
+    background-color: transparent;
+    cursor: pointer;
+    height: 100%;
+    border: none;
+    display: flex;
+    transform: translateX(-10px);
+    align-items: center;
+    transition: background-color 0.3s ease;
+}
+
+.top-nfts-arrow-container-left button:hover,.top-nfts-arrow-container-right button:hover{
+    background-color: rgba(204, 196, 196,127);
+    transition: background-color 0.3s ease;
+}
+
+.top-nfts-arrow{
+    height: 75px;
+    width: 40px;
+}
+
+.top-nfts-container2{
+    overflow: hidden;
+    position: relative;
+    display: flex;
+    width: 100%;
+    height: 100%;
+
+}
+
+.top-nfts{
+
+    display: flex;
+    flex-grow: 1;
+    justify-content: space-between;
+    margin-left: 20px;
+    right: 0;
+    margin-right: 20px;
+    overflow: hidden;
+    position: absolute;
+    transition: transform 0.5s ease;
+}
+
+.top-nfts-A {
+    left: 0;
+}
+
+.top-nfts-B {
+    left: 0;
+    transform: translateX(102%);
+}
+
+.top-nfts-nft-zoom{
+    width: 385px;
+    height: 385px;
+    overflow: hidden;
+    display: block;
+    transition: transform 0.5s ease;
+    border-radius: 15px;
+}
+
+.top-nfts-nft{
+    width: 385px;
+    height: 385px;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.top-nfts-nft-zoom:hover .top-nfts-nft {
+    transform: scale(1.1);
+}
+
