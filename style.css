@@ -8,8 +8,23 @@ body, html {
     display: flex;
     width: 100%;
     height: 500px;
-    background: linear-gradient(to bottom, gray, white);
+    background: linear-gradient(to bottom, darkslategray, white);
     position: absolute;
+}
+
+.gradient-banner.color .gradient-overlay {
+    opacity: 1;
+}
+
+.gradient-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(to bottom, purple, white);
+    opacity: 0;
+    transition: opacity 0.5s ease;
 }
 
 .navbar {
@@ -222,7 +237,7 @@ body, html {
 .navbar-nfts
 {
     position: absolute;
-    top: 150px;
+    top: 115px;
     left: 50px;
     right: 50px;
     display: flex;
@@ -252,14 +267,13 @@ body, html {
     position: absolute;
     width: 100%;
     height:385px;
-    top:225px;
+    top:175px;
     align-items: center;
     justify-content: space-between;
     overflow: hidden;
 }
 
 .top-nfts-arrow-container-left{
-    z-index: 100;
     margin-left: 10px;
 }
 
@@ -273,7 +287,7 @@ body, html {
     background-color: transparent;
     overflow: hidden;
     height: 100%;
-    width: 30px;
+    width: 50px;
     border-radius: 10px;
     visibility: hidden;
     opacity: 0;
@@ -307,6 +321,11 @@ body, html {
     width: 40px;
 }
 
+button:disabled {
+    cursor: pointer;
+    opacity: 1;
+}
+
 .top-nfts-container2{
     overflow: hidden;
     position: relative;
@@ -321,9 +340,9 @@ body, html {
     display: flex;
     flex-grow: 1;
     justify-content: space-between;
-    margin-left: 20px;
+    margin-left: 0px;
     right: 0;
-    margin-right: 20px;
+    margin-right: 10px;
     overflow: hidden;
     position: absolute;
     transition: transform 0.5s ease;
@@ -339,12 +358,41 @@ body, html {
 }
 
 .top-nfts-nft-zoom{
+    position: relative;
     width: 385px;
     height: 385px;
     overflow: hidden;
     display: block;
     transition: transform 0.5s ease;
     border-radius: 15px;
+}
+
+.top-nfts-nft-overlay{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 25%;
+    background: linear-gradient(transparent, rgba(0, 0, 0, 0.7));
+}
+
+.top-nfts-nft-info{
+    position: absolute;
+    left: 10px;
+    bottom: 10px;
+    background-color: transparent;
+    color: white;
+    padding: 5px;
+}
+
+.top-nfts-nft-info-name{
+    margin-bottom: 5px;
+    font-size: 20px;
+    font-weight: bolder;
+}
+
+.top-nfts-nft-info-price{
+    font-size: 18px;
 }
 
 .top-nfts-nft{
@@ -358,3 +406,68 @@ body, html {
     transform: scale(1.1);
 }
 
+.rank-ntfs-container {
+    position: absolute;
+    left:50px;
+    width: calc(100% - 100px);
+    height: 500px;
+    top: 625px;
+    overflow: hidden;
+    display: flex;
+    justify-content: space-between;
+}
+
+.rank-ntfs-button-container-left{
+    border-radius: 10px;
+    background-color: #f4f4f5;
+    position: relative;
+    height: 50px;
+    display: inline-flex;
+    align-items: center;
+}
+
+.rank-ntfs-button-container-right{
+    border-radius: 10px;
+    background-color: #f4f4f5;
+    position: relative;
+    height: 50px;
+    display: inline-flex;
+    align-items: center;
+}
+
+.option {
+    color: #535354;
+    z-index: 2;
+    background-color: transparent;
+    font-weight: bolder;
+    font-size: 24px;
+    height: 100%;
+    width: 100%;
+    border:none;
+    cursor: pointer;
+}
+
+.option.choose,.option:hover{
+    color: black;
+}
+
+/*.rank-ntfs-button{
+    height: 40px;
+    background-color: hotpink;
+}*/
+
+.rank-ntfs-button-slider{
+    left: 2px;
+    top: 2px;
+    border-radius: 8px;
+
+    height: calc(100% - 4px);
+    position:absolute;
+    background-color: #ffffff;
+    transition: transform 0.3s ease,width 0.3s ease;
+}
+
+.rank-ntfs-button-slider-button{
+    width: 100%;
+    height: 100%;
+}

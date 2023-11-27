@@ -8,7 +8,8 @@
 </head>
 <body>
 
-<div class="gradient-banner">
+<div class="gradient-banner" id="banner">
+    <div class="gradient-overlay"></div>
     <div class="navbar">
         <div class="navbar-left">
             <a href="index.html" class="logo-link">
@@ -112,6 +113,11 @@
                 <a href="#">
                     <div class="top-nfts-nft-zoom">
                         <img class="top-nfts-nft" src="images/test.jpg">
+                        <div class="top-nfts-nft-overlay"></div>
+                        <div class="top-nfts-nft-info">
+                            <div class="top-nfts-nft-info-name">This Is My Name</div>
+                            <div class="top-nfts-nft-info-price">This Is My Price</div>
+                        </div>
                     </div>
                 </a>
                 <a href="#">
@@ -185,7 +191,25 @@
         </div>
     </div>
 
+    <div class="rank-ntfs-container">
+        <div class="rank-ntfs-button-container-left">
+            <div class="rank-ntfs-button-slider">
+                <div class="rank-ntfs-button-slider-button"></div>
+            </div>
+            <button class="option" id="option-trending">&nbsp;&nbsp;Trending&nbsp;&nbsp;</button>
+            <button class="option" id="option-top">&nbsp;&nbsp;Top&nbsp;&nbsp;</button>
+        </div>
+        <div class="rank-ntfs-button-container-right">
+            <div class="rank-ntfs-button-slider">
+                <div class="rank-ntfs-button-slider-button"></div>
+            </div>
+            <button class="option" id="option-trending">&nbsp;&nbsp;Trending&nbsp;&nbsp;</button>
+            <button class="option" id="option-top">&nbsp;&nbsp;Top&nbsp;&nbsp;</button>
+        </div>
+    </div>
+
 </div>
+<script src="js/slider.js"></script>
 <script src="js/searchbox.js"></script>
 <script src="js/swapImages.js"></script>
 </body>
